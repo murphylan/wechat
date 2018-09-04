@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Security Example</title>
+<meta charset="UTF-8">
+<!-- 引入 WeUI -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<link rel="stylesheet"
+	href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+<script type="text/javascript"
+	src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>
+</head>
+<body>
+	<div th:if="${param.error}">Invalid username and password.</div>
+	<div th:if="${param.logout}">You have been logged out.</div>
+
+	<form id="form" th:action="@{/login}" method="post">
+		<div class="weui-cells__title">用户名</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+					<input class="weui-input" name="username" type="text" placeholder="请输入文本"
+						value="murphy" required />
+				</div>
+			</div>
+		</div>
+
+		<div class="weui-cells__title">密码</div>
+		<div class="weui-cells">
+			<div class="weui-cell">
+				<div class="weui-cell__bd">
+					<input class="weui-input" name="password" type="text" placeholder="请输入文本"
+						value="password" />
+				</div>
+			</div>
+		</div>
+		<div class="weui-btn-area">
+			<a class="weui-btn weui-btn_primary" href="javascript:submit();"
+				id="showTooltips">确定</a>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	function submit() {
+		weui.form.validate('#form', function(error) {
+			if (!error) {
+				var loading = weui.loading('提交中...');
+				setTimeout(function() {
+					loading.hide();
+					weui.toast('提交成功', 3000);
+				}, 1500);
+				document.getElementById("form").submit();
+			}
+			// return true; // 当return true时，不会显示错误
+		}, {
+			regexp : {
+				IDNUM : /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/,
+				VCODE : /^.{4}$/
+			}
+		});
+	}
+</script>
+</html>
