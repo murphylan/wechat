@@ -1,5 +1,7 @@
 package com.murphy.wechat.admin.security.controller;
 
+import java.security.Principal;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,8 +14,8 @@ import com.murphy.wechat.admin.security.entity.UserPrincipal;
 public class UserController {
 
 	@GetMapping({"/","index"})
-	public String index(Model model) {
-		return "index";
+	public String index(Principal principal) {
+		 return principal != null ? "demo/weui" : "hello";
 	}
 	
 	@GetMapping("login")
