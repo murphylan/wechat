@@ -1,16 +1,73 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>出错啦！</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Demo</title>
+<meta name="Keywords" content="Demo" />
+<meta name="Description" content="Demo" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet"
+	href="http://at.alicdn.com/t/font_795634_cwe0opdbto.css" />
+<link rel="stylesheet"
+	href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+<script type="text/javascript"
+	src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>
+<script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
-    <p th:text="'Url:' + ${URL}" />
-    <p th:text="'Error:' + ${error}" />
-    <p th:text="'Message:' + ${message}" />
-    <p th:text="'Exception:' + ${exception}" />
-    <p th:text="'Path:' + ${path}" />
-    <p th:text="'Status:' + ${status}" />
-    <p th:text="'Timestamp:' + ${timestamp}" />
+	<div class="container js_container">
+		<div class="page">
+			<div class="bd">
+				<div class="page__bd">
+					<h1 class="page__title">Error</h1>
+					<div class="weui-form-preview">
+						<div class="weui-form-preview__hd">
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Error</label> <span
+									class="weui-form-preview__value" th:text="${error}"></span>
+							</div>
+						</div>
+						<div class="weui-form-preview__bd">
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Url</label> <span
+									class="weui-form-preview__value" th:text="${URL}"></span>
+							</div>
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Message</label> <span
+									class="weui-form-preview__value" th:text="${message}"></span>
+							</div>
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Exception</label> <span
+									class="weui-form-preview__value" th:text="${exception}"></span>
+							</div>
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Path</label> <span
+									class="weui-form-preview__value" th:text="${path}"></span>
+							</div>
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Status</label> <span
+									class="weui-form-preview__value" th:text="${status}"></span>
+							</div>
+							<div class="weui-form-preview__item">
+								<label class="weui-form-preview__label">Timestamp</label> <span
+									class="weui-form-preview__value" th:text="${timestamp}"></span>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="weui-footer weui-footer_fixed-bottom">
+						<p class="weui-footer__links">
+							<a href="javascript:home();" class="weui-footer__link">Demo</a>
+						</p>
+						<p class="weui-footer__text">Copyright © 2008-2018 murphylan@hotmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
