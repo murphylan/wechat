@@ -1,10 +1,12 @@
 package com.murphy.wechat.admin.business;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.murphy.wechat.admin.security.entity.UserDO;
@@ -15,14 +17,13 @@ public class WelcomeRestController {
 	@Value("${application.message:Hello World}")
 	private String message = "Hello World";
 
-
-	@RequestMapping("/test")
-	public String index() {
-		return message;
+	@GetMapping("/test")
+	@Async
+	public CompletableFuture<String> index() {
+		return CompletableFuture.supplyAsync(() -> message);
 	}
 
-
-	@RequestMapping(value = "/getjson", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@GetMapping(value = "/getjson", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public UserDO getJson() throws IOException {
 		UserDO user = new UserDO();
 		user.setEmail("murphylan@hotmail.com");
