@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example</title>
+        <meta charset="UTF-8">
+        <!-- 引入 WeUI -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>
+    </head>
+    <body>
+        <h1 th:text="${email}"></h1>
+
+        <!-- 使用 -->
+        <p><a th:href="@{/hello}" class="weui-btn weui-btn_primary">绿色按钮</a></p>
+    </body>
+</html>
