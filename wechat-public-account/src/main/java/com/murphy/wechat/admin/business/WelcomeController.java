@@ -12,17 +12,16 @@ public class WelcomeController {
 	@Value("${application.message:Hello World}")
 	private String message = "Hello World";
 
-
 	@GetMapping("/testhelloword")
 	@ResponseBody
 	@Transactional(readOnly = true)
 	public String helloWorld() {
 		return message;
 	}
-	
+
 	@GetMapping("/weui")
 	public String demo() {
 		return "/demo/weui";
 	}
-	
+
 }
