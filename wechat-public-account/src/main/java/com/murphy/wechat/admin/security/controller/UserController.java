@@ -3,7 +3,10 @@ package com.murphy.wechat.admin.security.controller;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,13 +57,18 @@ public class UserController {
 		userDetailsService.login(username);
 	}
 
+	@GetMapping("getUser")
+	public ResponseEntity<?> getUser(@AuthenticationPrincipal UserPrincipal user) {
+		return ResponseEntity.ok(user);
+	}
+
 	/***
 	 * 通用的页面跳转方法
 	 * 
 	 * @param pagename
 	 * @return
 	 */
-	@GetMapping("/page/{path}/{pagename}")
+	@GetMapping("/page/{pagepath}/{pagename}")
 	public String page(@PathVariable("pagepath") String pagepath, @PathVariable("pagename") String pagename) {
 		return "/" + pagepath + "/" + pagename;
 	}
