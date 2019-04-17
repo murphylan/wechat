@@ -1,0 +1,22 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "bruno",
+        "email": "bruno@email.com",
+        "password": "bruno"
+      },
+      {
+        "id": 2,
+        "name": "lanzejun",
+        "email": "lanzejun@cn.ibm.com",
+        "password": "iloveibm"
+      },
+      {
+        "id": 3,
+        "name": "nilson",
+        "email": "nilson@email.com",
+        "password": "nilson"
+      }
+    ]
+  }
