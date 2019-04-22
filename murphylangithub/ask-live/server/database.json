@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "tname": "string44",
+      "sql44": "string44",
+      "sql37": "string37",
+      "sql": "string66",
+      "status": "1",
+      "id": 1
+    },
+    {
+      "tname": "test22",
+      "sql44": "test22test22test22test22",
+      "sql37": "test22test22",
+      "sql": "test22",
+      "status": "1",
+      "id": 2
+    },
+    {
+      "tname": "test33",
+      "sql44": "test33test33test33test33test33test33",
+      "sql37": "test33test33test33",
+      "sql": "test33",
+      "status": "1",
+      "id": 3
+    },
+    {
+      "tname": "this.profileForm",
+      "sql44": "this.profileFormthis.profileFormthis.profileForm",
+      "sql37": "this.profileFormthis.profileForm",
+      "sql": "this.profileForm",
+      "status": "1",
+      "id": 4
+    },
+    {
+      "tname": "aparptf_a",
+      "sql44": "create table \"bluadmin\".\"aparptf_a\" ( \"aparid\" varchar(10 octets) not null , \"ptfid\" varchar(10 octets) not null ) in \"userspace1\" organize by row;",
+      "sql37": "create table \"bluadmin\".\"aparptf_a\" ( \"aparid\" varchar(10 octets) not null, \"ptfid\" varchar(10 octets) not null ) organize by row data capture none in \"userspace1\" compress no;",
+      "sql": "",
+      "status": "0",
+      "id": 5
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Location001"
+    },
+    {
+      "id": 2,
+      "name": "Location002"
+    },
+    {
+      "id": 3,
+      "name": "Location003"
+    }
+  ],
+  "families": [
+    {
+      "id": 1,
+      "name": "FM001"
+    },
+    {
+      "id": 2,
+      "name": "FM002"
+    },
+    {
+      "id": 3,
+      "name": "FM003"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "cost": 11,
+      "quantity": 10,
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "cost": 12,
+      "quantity": 100,
+      "productId": 2
+    },
+    {
+      "id": 3,
+      "cost": 15,
+      "quantity": 101,
+      "productId": 3
+    }
+  ]
+}
